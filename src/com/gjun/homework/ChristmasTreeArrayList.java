@@ -26,25 +26,24 @@ public class ChristmasTreeArrayList {
 
 	}
 	
-	public static List<List<String>> createChristmasTree(int numbers){
-		
+	public static List<List<String>> createChristmasTree(int numbers) {
+
 		List<List<String>> tree = new ArrayList();
-		List<String>[] ary = new ArrayList[numbers];
 
 		for (int i = 0, countX = numbers - 1; i < numbers; i++, countX--) {
 
-			ary[i] = new ArrayList();
+			List<String> ary = new ArrayList();
 
 			for (int j = 0; j < countX; j++) {
-				ary[i].add("X");
+				ary.add("X");
 			}
 
 			for (int j = 0; j < numbers + i - countX; j++) {
-				ary[i].add("O");
+				ary.add("O");
 			}
 
-			tree.add(ary[i]);
-			
+			tree.add(ary);
+
 		}
 
 		return tree;
